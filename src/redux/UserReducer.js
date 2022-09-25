@@ -4,12 +4,14 @@ const DEL_USER = 'DEL_USER';
 let initialState = {
     isAuth: null,
     fullName: null,
-    email: null
+    email: null,
+    photoURL: null
 }
 
 const UserReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USER: {
+          
             /* let stateCopy = { ...state };
             stateCopy.isAuth = action.isAuth,
             stateCopy.fullName = action.fullName,
@@ -19,7 +21,8 @@ const UserReducer = (state = initialState, action) => {
                 ...state,
                 isAuth: action.isAuth,
                 fullName: action.fullName,
-                email: action.email
+                email: action.email,
+                photoURL: action.photoURL
             }
             return stateCopy;
         }
@@ -28,7 +31,8 @@ const UserReducer = (state = initialState, action) => {
                 ...state,
                 isAuth: null,
                 fullName: null,
-                email: null
+                email: null,
+                photoURL: null
             }
             return stateCopy;
         }
@@ -38,12 +42,13 @@ const UserReducer = (state = initialState, action) => {
 }
 
 
-export const setUserAC = (isAuth, fullName, email) => {
+export const setUserAC = (isAuth, fullName, email, photoURL) => {
     return {
         type: 'SET_USER',
         isAuth,
         fullName,
-        email
+        email,
+        photoURL
     }
 }
 export const delUserAC = () => {

@@ -36,6 +36,14 @@ h2 {
     background-color: gainsboro;
     border-bottom: 1px solid grey;
 }
+.searchBodyUserInfo {
+    display: flex;
+}
+.userName {
+    font-size: 20px;
+    margin-left: 20px;
+    align-self: center;
+}
 .itemAvaBlock {
     position: relative;
 }

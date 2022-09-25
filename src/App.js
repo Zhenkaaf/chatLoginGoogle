@@ -1,19 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route, NavLink, Navigate } from "react-router-dom";
-import { Provider } from 'react-redux';
-import store from './redux/reduxStore';
+
+
 import ContactsContainer from './components/Contacts/ContactsContainer';
 import WindowContainer from './components/ChatWindow/WindowContainer';
 import LoginForm from './components/Login/LoginForm';
+import {useSelector} from 'react-redux';
 
 
 
-function App() {
-  let isAuth = null;
+function App(props) {
+  const {isAuth, fullName, email} = useSelector(state => state.user);
+  console.log(isAuth);
+  console.log(fullName);
+  console.log(email);
   return (
 
-    <Provider store={store}>
+   
       <div className='App'>
         <div className='container'>
         
@@ -30,7 +34,7 @@ function App() {
 
         </div>
       </div>
-    </Provider>
+   
 
   );
 }
